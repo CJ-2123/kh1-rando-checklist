@@ -5,6 +5,7 @@
   "homepage": "http://cj-2123.github.io/kh1-rando-checklist",
   "type": "module",
   "scripts": {
+    "start": "react-scripts start",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "dev": "vite",
