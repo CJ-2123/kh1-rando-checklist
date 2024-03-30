@@ -1,6 +1,6 @@
 {
   "name": "kh1-tracker",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
   "homepage": "http://cj-2123.github.io/kh1-rando-checklist",
   "type": "module",
