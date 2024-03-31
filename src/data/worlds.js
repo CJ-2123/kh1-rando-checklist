@@ -8,13 +8,13 @@ const worlds = [
   {
     id: "2",
     name: "Traverse Town",
-    totalChecks: 61,
+    totalChecks: 73,
     bgColor: "olive",
   },
   {
     id: "3",
     name: "Wonderland",
-    totalChecks: 18,
+    totalChecks: 20,
     bgColor: "orchid",
   },
   {
@@ -26,7 +26,7 @@ const worlds = [
   {
     id: "5",
     name: "Deep Jungle",
-    totalChecks: 24,
+    totalChecks: 25,
     bgColor: "olivedrab",
   },
   {
@@ -38,7 +38,7 @@ const worlds = [
   {
     id: "7",
     name: "Monstro",
-    totalChecks: 22,
+    totalChecks: 23,
     bgColor: "skyblue",
   },
   {
