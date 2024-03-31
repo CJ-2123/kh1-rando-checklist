@@ -5,7 +5,6 @@ import locations from "../data/hint-locations.js";
 
 /*
 TODO:
-- tooltips
 - increment and decrement items
 */
 
@@ -13,6 +12,7 @@ function Tracker() {
   const [imageStyles, setImageStyles] = useState({});
   const [inputValues, setInputValues] = useState(hints.map(() => ""));
   const [suggestions, setSuggestions] = useState(hints.map(() => []));
+  const [tooltipId, setTooltipId] = useState(null);
 
   // Initialize image styles from items.js
   useEffect(() => {
@@ -109,8 +109,11 @@ function Tracker() {
                     src={src}
                     onMouseDown={handleOpacityToggle}
                     onContextMenu={(e) => e.preventDefault()}
+                    onMouseEnter={() => setTooltipId(id)}
+                    onMouseLeave={() => setTooltipId(null)}
                   />
                   <span className="count">{max}</span>
+                  {tooltipId === id && <div className="tooltip">{id}</div>}{" "}
                 </td>
               ))}
             </tr>
@@ -121,7 +124,13 @@ function Tracker() {
       <div className="hints">
         {hints.map((hint, index) => (
           <div className="hint-item" key={hint.id}>
-            <img src={hint.src} alt={hint.id} />
+            <img
+              src={hint.src}
+              alt={hint.id}
+              onMouseEnter={() => setTooltipId(hint.id)}
+              onMouseLeave={() => setTooltipId(null)}
+            />{" "}
+            {tooltipId === hint.id && <div className="tooltip">{hint.id}</div>}
             <input
               type="text"
               value={inputValues[index]}

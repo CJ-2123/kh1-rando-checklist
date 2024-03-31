@@ -91,7 +91,7 @@ const items = [
     max: 5,
   },
   {
-    id: "tornpages",
+    id: "torn_pages",
     src: "images/tornpages.png",
     opacity: 0.5,
     filter: "grayscale(75%)",
@@ -119,7 +119,7 @@ const items = [
     max: 10,
   },
   {
-    id: "secret_reports",
+    id: "ansem_reports",
     src: "images/ansemsreport.png",
     opacity: 0.5,
     filter: "grayscale(75%)",
@@ -203,7 +203,7 @@ const items = [
     max: 1,
   },
   {
-    id: "white",
+    id: "white_trinity",
     src: "images/white.png",
     opacity: 0.5,
     filter: "grayscale(75%)",

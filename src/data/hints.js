@@ -1,38 +1,38 @@
 const hints = [
   {
-    id: "rope",
+    id: "rope_hint",
     src: "images/rope.png",
   },
   {
-    id: "cloth",
+    id: "cloth_hint",
     src: "images/cloth.png",
   },
   {
-    id: "log",
+    id: "log_hint",
     src: "images/log.png",
   },
   {
-    id: "egg",
+    id: "egg_hint",
     src: "images/seagullegg.png",
   },
   {
-    id: "fish",
+    id: "fish_hint",
     src: "images/Fish.png",
   },
   {
-    id: "water",
+    id: "water_hint",
     src: "images/drinkingwater.png",
   },
   {
-    id: "mushroom",
+    id: "mushroom_hint",
     src: "images/mushroom.png",
   },
   {
-    id: "coconut",
+    id: "coconut_hint",
     src: "images/coconut.png",
   },
   {
-    id: "navi_g",
+    id: "navi_g_hint",
     src: "images/navigummi.png",
   },
   {
@@ -52,28 +52,76 @@ const hints = [
     src: "images/emblem-bottom-statue.png",
   },
   {
-    id: "khama_book",
+    id: "khama_book_hint",
     src: "images/khama.png",
   },
   {
-    id: "theon_book",
+    id: "theon_book_hint",
     src: "images/theon.png",
   },
   {
-    id: "jack_in_the_box",
+    id: "jack_in_the_box_hint",
     src: "images/jackinthebox.png",
   },
   {
-    id: "high_jump",
+    id: "high_jump_hint",
     src: "images/highjump.png",
   },
   {
-    id: "glide",
+    id: "glide_hint",
     src: "images/glide.png",
   },
   {
-    id: "mermaid_kick",
+    id: "mermaid_kick_hint",
     src: "images/mermaidkick.png",
+  },
+  {
+    id: "postcard_8",
+    src: "images/post_cards.png",
+  },
+  {
+    id: "postcard_9",
+    src: "images/post_cards.png",
+  },
+  {
+    id: "postcard_10",
+    src: "images/post_cards.png",
+  },
+  {
+    id: "tornpage_1",
+    src: "images/tornpages.png",
+  },
+  {
+    id: "tornpage_2",
+    src: "images/tornpages.png",
+  },
+  {
+    id: "tornpage_3",
+    src: "images/tornpages.png",
+  },
+  {
+    id: "earthsine",
+    src: "images/simba.png",
+  },
+  {
+    id: "genie_hint",
+    src: "images/genie.png",
+  },
+  {
+    id: "naturespark",
+    src: "images/bambi.png",
+  },
+  {
+    id: "watergleam",
+    src: "images/dumbo.png",
+  },
+  {
+    id: "tinkerbell_hint",
+    src: "images/tinkerbell.png",
+  },
+  {
+    id: "fireglow",
+    src: "images/mushu.png",
   },
 ];
 

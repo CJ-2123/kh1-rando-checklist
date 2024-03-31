@@ -84,6 +84,7 @@ p {
   padding: 1px;
   max-height: 475px;
   overflow-y: scroll;
+  position: relative;
 }
 
 .hints::-webkit-scrollbar {
@@ -113,6 +114,7 @@ input:hover {
 }
 
 .hints ul {
+  position: absolute;
   list-style: none;
   background-color: white;
   color: black;
@@ -141,4 +143,13 @@ input:hover {
   color: #ddd;
   padding: 1px 3px;
   display: none;
+}
+
+.tooltip {
+  position: absolute;
+  background-color: #555;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  z-index: 1;
 }
