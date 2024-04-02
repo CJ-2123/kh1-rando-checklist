@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import World from "./components/World.jsx";
 import Tracker from "./components/Tracker.jsx";
 import Home from "./components/Home.jsx";
