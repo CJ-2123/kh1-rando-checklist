@@ -61,7 +61,7 @@ function Tracker() {
   // Open popout window for hints
   function handleOpenPopout() {
     window.open(
-      "/hints",
+      "#/hints",
       "_blank",
       "toolbar=no,resizeable=yes,width=275,height=625"
     );
