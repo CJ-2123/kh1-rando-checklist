@@ -132,7 +132,8 @@ function Location() {
                         ))}{" "}
                       </div>
                     )
-                  : selected === dataItem.id && (
+                  : //Single selection (not using)
+                    selected === dataItem.id && (
                       <div className="checks">
                         {dataItem.checks.map((check) => (
                           <li>
