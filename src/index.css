@@ -133,6 +133,11 @@ input:hover {
   background-color: #dddddd;
 }
 
+ul li.active {
+  background-color: #007bff;
+  color: #ffffff;
+}
+
 .tracker-item .count {
   position: absolute;
   font-size: 12px;

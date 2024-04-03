@@ -6,6 +6,7 @@ function Hints() {
   const [inputValues, setInputValues] = useState(hints.map(() => ""));
   const [suggestions, setSuggestions] = useState(hints.map(() => []));
   const [tooltipId, setTooltipId] = useState(null);
+  const [activeSuggestion, setActiveSuggestion] = useState(null);
 
   // Make drop down suggestions for hint input boxes
   function handleInputChange(event, index) {
@@ -40,6 +41,35 @@ function Hints() {
     setSuggestions(newSuggestions); // Clear suggestions when a suggestion is clicked
   }
 
+  // Arrow keys for suggestions
+  function handleKeyDown(event, index) {
+    const newSuggestions = [...suggestions];
+    const suggestionCount = newSuggestions[index]?.length || 0;
+
+    switch (event.key) {
+      case "ArrowDown":
+        setActiveSuggestion((prev) =>
+          prev === null ? 0 : (prev + 1) % suggestionCount
+        );
+        break;
+      case "ArrowUp":
+        setActiveSuggestion((prev) =>
+          prev === null
+            ? suggestionCount - 1
+            : (prev - 1 + suggestionCount) % suggestionCount
+        );
+        break;
+      case "Enter":
+        if (activeSuggestion !== null) {
+          handleSuggestionClick(newSuggestions[index][activeSuggestion], index);
+          setActiveSuggestion(null);
+        }
+        break;
+      default:
+        break;
+    }
+  }
+
   // Create hint tracker
   return (
     <div className="hints">
@@ -57,11 +87,13 @@ function Hints() {
             value={inputValues[index]}
             onChange={(e) => handleInputChange(e, index)}
             placeholder="Location"
+            onKeyDown={(e) => handleKeyDown(e, index)}
           />
           <ul>
-            {suggestions[index].map((suggestion, subIndex) => (
+            {suggestions[index]?.map((suggestion, subIndex) => (
               <li
                 key={subIndex}
+                className={activeSuggestion === subIndex ? "active" : ""}
                 onClick={() => handleSuggestionClick(suggestion, index)}
               >
                 {suggestion}
