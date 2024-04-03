@@ -1,27 +1,19 @@
 const hints = [
   {
-    id: "rope_hint",
-    src: "images/rope.png",
+    id: "log_hint",
+    src: "images/log.png",
   },
   {
     id: "cloth_hint",
     src: "images/cloth.png",
   },
   {
-    id: "log_hint",
-    src: "images/log.png",
+    id: "rope_hint",
+    src: "images/rope.png",
   },
   {
     id: "egg_hint",
     src: "images/seagullegg.png",
-  },
-  {
-    id: "fish_hint",
-    src: "images/Fish.png",
-  },
-  {
-    id: "water_hint",
-    src: "images/drinkingwater.png",
   },
   {
     id: "mushroom_hint",
@@ -30,6 +22,14 @@ const hints = [
   {
     id: "coconut_hint",
     src: "images/coconut.png",
+  },
+  {
+    id: "fish_hint",
+    src: "images/Fish.png",
+  },
+  {
+    id: "water_hint",
+    src: "images/drinkingwater.png",
   },
   {
     id: "navi_g_hint",

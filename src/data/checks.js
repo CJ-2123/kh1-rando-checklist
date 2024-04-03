@@ -248,7 +248,7 @@ const data = [
       "Hippos Vine Chest",
       "Vines Chest",
       "Vines 2 Chest",
-      "Vines 2 Blue Trinity",
+      "Climbing Trees Blue Trinity",
       "Defeat Sabor Reward",
       "Cliff Chests (x2)",
       "Clayton Spell (Cure)",
