@@ -59,6 +59,10 @@ function Location() {
           return "antiquewhite";
         case checkName.includes("Spell ("):
           return "violet";
+        case checkName.includes("(Torn Page)"):
+          return "burlywood";
+        case checkName.includes("Trinity Reward"):
+          return "turquoise";
         default:
           return "white";
       }
