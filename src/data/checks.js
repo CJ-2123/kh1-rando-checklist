@@ -33,7 +33,7 @@ const data = [
       "Guard Armor Spell (Fire)",
       "Guard Armor Trinity Reward",
       "Gepetto House Chest",
-      "Gepetto House Postcard",
+      "Gepetto House (Postcard)",
     ],
   },
   {
@@ -65,7 +65,7 @@ const data = [
     world: "Traverse Town",
     name: "3rd District",
     checks: [
-      "Balcony Postcard",
+      "Balcony (Postcard)",
       "Merlin Yellow Trinity",
       "Merlin Back Chest",
       "Spellbinder Check",
@@ -89,7 +89,7 @@ const data = [
       "Cids Shop List 2", // after agrabah
       "Cids Shop List 3", // after rescuing kairi
       "Synth Shop Chests x2",
-      "Synth Shop Postcard",
+      "Synth Shop (Postcard)",
       "Synth Shop List 1",
       "Synth Shop List 2",
       "Synth Shop List 3",
@@ -377,7 +377,7 @@ const data = [
     name: "Town",
     checks: [
       "Under Jack's House Chest",
-      "Lab Torn Page",
+      "Lab (Torn Page)",
       "Town Ledge Chest",
       "Pumpkin Mouth Chests (x2)",
     ],
@@ -411,7 +411,7 @@ const data = [
     world: "Atlantica",
     name: "Ocean",
     checks: [
-      "Ariel's Grotto Torn Page",
+      "Ariel's Grotto (Torn Page)",
       "Ariel's Grotto Middle Chest",
       "Crystal Trident Reward",
       "Ursula 1 Reward",
@@ -599,9 +599,8 @@ const data = [
       "Clear Page 1",
       "Clear Page 2",
       "Clear Page 3 Spell (Stop)",
-      "Clear Page 4 (Mythril Hint)",
-      "Clear Page 5 (ExP Ring Hint)",
-      "Clear Page 5 (Sora Cheer)",
+      "Clear Page 4",
+      "Clear Page 5 (x2)",
     ],
   },
   {

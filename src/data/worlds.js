@@ -74,7 +74,7 @@ const worlds = [
   {
     id: "13",
     name: "100 Acre Wood",
-    totalChecks: 10,
+    totalChecks: 9,
     bgColor: "burlywood",
   },
 ];

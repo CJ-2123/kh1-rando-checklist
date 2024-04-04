@@ -96,10 +96,6 @@ const hints = [
     src: "images/tornpages.png",
   },
   {
-    id: "tornpage_3",
-    src: "images/tornpages.png",
-  },
-  {
     id: "earthshine",
     src: "images/simba.png",
   },
