@@ -64,6 +64,18 @@ const hints = [
     src: "images/jackinthebox.png",
   },
   {
+    id: "evidence_hint",
+    src: "images/evidence.png",
+  },
+  {
+    id: "slides_hint",
+    src: "images/slides.png",
+  },
+  {
+    id: "entrypass_hint",
+    src: "images/entrypass.png",
+  },
+  {
     id: "high_jump_hint",
     src: "images/highjump.png",
   },
