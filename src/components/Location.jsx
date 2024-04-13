@@ -3,6 +3,9 @@ import data from "../data/checks.js";
 import req from "../data/requirements.js";
 import { WorldContext } from "./World.jsx";
 
+// TODO:
+// Get rid of single selection code
+
 function Location() {
   // Import current world information
   const world = useContext(WorldContext);
@@ -84,7 +87,7 @@ function Location() {
     setSectionCheckedStatus(newSectionCheckedStatus);
   }, [checkedItems]);
 
-  // Define handleButtonClick function outside the Location component
+  // Toggle check's requirements
   function handleButtonClick(id) {
     setInfoStates((prevState) => ({
       ...prevState,
@@ -92,6 +95,7 @@ function Location() {
     }));
   }
 
+  // Get requirements list
   function returnRequirements(id) {
     const result = req.find((req) => req.name === id);
     if (result) {
