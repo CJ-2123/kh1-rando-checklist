@@ -1,10 +1,14 @@
 import React, { useState, useContext, useEffect } from "react";
 import data from "../data/checks.js";
+import req from "../data/requirements.js";
 import { WorldContext } from "./World.jsx";
 
 function Location() {
   // Import current world information
   const world = useContext(WorldContext);
+
+  // Get checks with requirements
+  const lockedChecks = req.map((obj) => obj.name);
 
   const [selected, setSelected] = useState(null);
   const [checkedItems, setCheckedItems] = useState({});
@@ -12,6 +16,7 @@ function Location() {
   const [multiple, setMultiple] = useState([]);
   const [count, setCount] = useState(0);
   const [sectionCheckedStatus, setSectionCheckedStatus] = useState({});
+  const [infoStates, setInfoStates] = useState({});
 
   // Single selection function for sections (Not using)
   function handleSingleSelection(getCurrentId) {
@@ -79,6 +84,23 @@ function Location() {
     setSectionCheckedStatus(newSectionCheckedStatus);
   }, [checkedItems]);
 
+  // Define handleButtonClick function outside the Location component
+  function handleButtonClick(id) {
+    setInfoStates((prevState) => ({
+      ...prevState,
+      [id]: !prevState[id], // Toggle the state for this id
+    }));
+  }
+
+  function returnRequirements(id) {
+    const result = req.find((req) => req.name === id);
+    if (result) {
+      return result.items;
+    } else {
+      return null;
+    }
+  }
+
   // Create section for each location with checklist
   return (
     <div className="wrapper">
@@ -114,8 +136,9 @@ function Location() {
                   ? multiple.indexOf(dataItem.id) !== -1 && (
                       <div className="checks">
                         {dataItem.checks.map((check) => (
-                          <li>
+                          <li key={check} className="check-item">
                             <label
+                              className="check-label"
                               style={{
                                 textDecoration: checkedItems[check]
                                   ? "line-through"
@@ -132,6 +155,25 @@ function Location() {
                               ></input>
                               {check}
                             </label>
+                            {lockedChecks.includes(check) && (
+                              <div
+                                className={`info-container ${
+                                  infoStates[check] ? "show" : ""
+                                }`}
+                              >
+                                <img
+                                  src="images/info-blue.png"
+                                  className="info-popup"
+                                  alt="Info Button"
+                                  onClick={() => handleButtonClick(check)}
+                                />
+                                {infoStates[check] && (
+                                  <div className="info-content">
+                                    {returnRequirements(check)}
+                                  </div>
+                                )}
+                              </div>
+                            )}
                           </li>
                         ))}{" "}
                       </div>
