@@ -2,51 +2,72 @@ import React, { useState, useEffect } from "react";
 import items from "../data/items.js";
 import Hints from "./Hints.jsx";
 
-/*
-TODO:
-- increment and decrement items
-*/
-
 function Tracker() {
   const [imageStyles, setImageStyles] = useState({});
   const [tooltipId, setTooltipId] = useState(null);
+  const [iconCounts, setIconCounts] = useState({});
 
-  // Initialize image styles from items.js
+  // Initialize item counts and styles
   useEffect(() => {
     const initialStyles = {};
+    const initialCounts = {};
+
     items.forEach(({ id, opacity, filter }) => {
       initialStyles[id] = { opacity, filter };
+      initialCounts[id] = 0;
     });
+
     setImageStyles(initialStyles);
+    setIconCounts(initialCounts);
   }, []);
 
-  // Toggle styling of items in the tracker when clicked
+  // Toggle styling of items and incrementing/decrementing items in the tracker when clicked
   function handleOpacityToggle(event) {
     const { id } = event.target;
     const isLeftClick = event.button === 0; // left click
     const isRightClick = event.button === 2; // right click
 
     if (isLeftClick) {
+      if (iconCounts[id] < items.find((item) => item.id === id).max) {
+        // Check if count is less than max
+        setImageStyles((prevStyles) => ({
+          ...prevStyles,
+          [id]: {
+            opacity: 1,
+            filter: "none",
+          },
+        }));
+        setIconCounts((prevCounts) => ({
+          ...prevCounts,
+          [id]: prevCounts[id] + 1,
+        }));
+      }
+    } else if (isRightClick && iconCounts[id] > 1) {
+      // Check is count greater than 1 on decrement
       setImageStyles((prevStyles) => ({
         ...prevStyles,
         [id]: {
-          opacity: prevStyles[id] && prevStyles[id].opacity === 1 ? 0.5 : 1,
-          filter:
-            prevStyles[id] && prevStyles[id].opacity === 1
-              ? "grayscale(75%)"
-              : "none",
+          opacity: 1,
+          filter: "none",
         },
       }));
-    } else if (isRightClick) {
+      setIconCounts((prevCounts) => ({
+        ...prevCounts,
+        [id]: prevCounts[id] - 1,
+      }));
+      event.preventDefault(); // Prevent the context menu from appearing
+    } else if (isRightClick && iconCounts[id] === 1) {
+      // Fade image if count is 1 and decrementing
       setImageStyles((prevStyles) => ({
         ...prevStyles,
         [id]: {
-          opacity: prevStyles[id] && prevStyles[id].opacity === 1 ? 0.5 : 0.5,
-          filter:
-            prevStyles[id] && prevStyles[id].opacity === 0.5
-              ? "grayscale(75%)"
-              : "grayscale(75%)",
+          opacity: 0.5,
+          filter: "grayscale(75%)",
         },
+      }));
+      setIconCounts((prevCounts) => ({
+        ...prevCounts,
+        [id]: prevCounts[id] - 1,
       }));
       event.preventDefault(); // Prevent the context menu from appearing
     }
@@ -85,7 +106,11 @@ function Tracker() {
                     onMouseEnter={() => setTooltipId(id)}
                     onMouseLeave={() => setTooltipId(null)}
                   />
-                  <span className="count">{max}</span>
+                  {items.find((item) => item.id === id).max > 1 && (
+                    <span className="count tracker-count">
+                      {iconCounts[id] > 0 ? iconCounts[id] : ""}
+                    </span>
+                  )}
                   {tooltipId === id && <div className="tooltip">{id}</div>}{" "}
                 </td>
               ))}

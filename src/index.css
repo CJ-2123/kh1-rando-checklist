@@ -179,6 +179,10 @@ ul li.active {
   color: #ffffff;
 }
 
+.tracker-item {
+  position: relative;
+}
+
 .tracker-item .count {
   position: absolute;
   font-size: 12px;
@@ -187,8 +191,7 @@ ul li.active {
   background: #000;
   border-radius: 10px;
   color: #ddd;
-  padding: 1px 3px;
-  display: none;
+  padding: 0px 1px;
 }
 
 .tooltip {
